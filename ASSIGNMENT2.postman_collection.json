@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "37237f32-9acc-484c-b8b1-8a16aa17954d",
-    "name": "My Collection",
+    "name": "ASSIGNMENT2",
     "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "56821539",
@@ -9,29 +9,13 @@
   },
   "item": [
     {
-      "name": "Add user",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Successful POST request\", function () {",
-              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
-              "});",
-              ""
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        }
-      ],
+      "name": "add user",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"name\": \"user 1\",\n    \"age\": 27,\n    \"email\": \"user@gmail.com\"\n\n}",
+          "raw": "{\r\n  \"name\": \"User 1\",\r\n  \"age\": 27,\r\n  \"email\": \"user@email.com\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -39,17 +23,16 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/user",
+          "raw": "http://localhost:8080/user",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "3000",
+          "port": "8080",
           "path": [
             "user"
           ]
-        },
-        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+        }
       },
       "response": []
     },
@@ -60,7 +43,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"age\": 30\n}",
+          "raw": "{\r\n  \"age\": 30\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -68,12 +51,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/user/1",
+          "raw": "http://localhost:8080/user/1",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "3000",
+          "port": "8080",
           "path": [
             "user",
             "1"
@@ -89,20 +72,15 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
+          "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3000/user/1",
+          "raw": "http://localhost:8080/user/1",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "3000",
+          "port": "8080",
           "path": [
             "user",
             "1"
@@ -112,7 +90,7 @@
       "response": []
     },
     {
-      "name": "get all user",
+      "name": "Get All Users",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -124,12 +102,12 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3000/user",
+          "raw": "http://localhost:8080/user",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "3000",
+          "port": "8080",
           "path": [
             "user"
           ]
@@ -138,7 +116,7 @@
       "response": []
     },
     {
-      "name": "get user by id",
+      "name": "Get User By ID",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -147,15 +125,20 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": ""
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
-          "raw": "http://localhost:3000/user/1",
+          "raw": "http://localhost:8080/user/1",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "3000",
+          "port": "8080",
           "path": [
             "user",
             "1"
